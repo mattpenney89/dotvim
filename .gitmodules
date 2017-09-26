@@ -16,3 +16,6 @@
 [submodule "bundle/vim-clang-format"]
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
