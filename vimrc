@@ -14,3 +14,6 @@ set ignorecase
 
 syntax on
 filetype plugin indent on
+
+set directory=~/.vim/swapfiles//
+set backupdir=~/.vim/backup//
