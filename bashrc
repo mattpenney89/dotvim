@@ -119,9 +119,14 @@ alias cmake='cmake -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -G Ninja'
 alias ninja='ninja -j12'
 alias open='xdg-open'
 alias hgrep='history | grep'
-alias please='sudo !!'
+alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias cp='cp -a'
+
+alias get='git'
+alias gitStashPull='git stash && git pull --ff && git stash pop'
+
 export NINJA_STATUS="[%f/%t] (%r) "
+export EDITOR=vim
 
 
 #Add an "alert" alias for long running commands.  Use like so:
@@ -147,6 +152,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+git config --global alias.last 'log -1 HEAD'
+
 
 PATH=$PATH:/home/mpenney/bin:/usr/local/sonar-scanner-3.0.1.733-linux/bin 
 
