@@ -115,7 +115,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias f='fuck'
 
-alias cmake='cmake -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -G Ninja'
 alias ninja='ninja -j12'
 alias open='xdg-open'
 alias hgrep='history | grep'

@@ -24,4 +24,4 @@ set backupdir=~/.vim/backup//
 
 map <F5> :call CurtineIncSw()<CR>
 
-
+autocmd Filetype cpp set relativenumber
