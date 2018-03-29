@@ -115,7 +115,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias f='fuck'
 
-alias ninja='ninja -j12'
 alias open='xdg-open'
 alias hgrep='history | grep'
 alias please='sudo "$BASH" -c "$(history -p !!)"'

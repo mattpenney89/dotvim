@@ -25,3 +25,6 @@
 [submodule "bundle/CurtineIncSw.vim"]
 	path = bundle/CurtineIncSw.vim
 	url = https://github.com/ericcurtin/CurtineIncSw.vim.git
+[submodule "bundle/vimify"]
+	path = bundle/vimify
+	url = https://github.com/mattpenney89/vimify.git

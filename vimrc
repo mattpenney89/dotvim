@@ -24,4 +24,13 @@ set backupdir=~/.vim/backup//
 
 map <F5> :call CurtineIncSw()<CR>
 
-autocmd Filetype cpp set relativenumber
+au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
+
+
+autocmd Filetype cpp,cmake,py set relativenumber number
+
+autocmd FileType c,cpp,objc nnoremap <C-C> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <C-C> :ClangFormat<CR>
+
+let g:spotify_token='ZDdlYmJjNzU0NDQzNGJkNmFmYThjYjZhOTA0ZjJjMDM6NWVmM2M0Zjk5YTNkNGZhYWFjMTM3NzkxODM5ZTVmYjU='
+
