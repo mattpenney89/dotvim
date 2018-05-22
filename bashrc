@@ -122,6 +122,7 @@ alias cp='cp -a'
 
 alias get='git'
 alias gitStashPull='git stash && git pull --ff && git stash pop'
+alias gitFetchMerge='git fetch && git merge'
 
 export NINJA_STATUS="[%f/%t] (%r) "
 export EDITOR=vim

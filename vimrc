@@ -17,12 +17,16 @@ set ignorecase
 syntax on
 filetype plugin indent on
 
+let g:gundo_prefer_python3 = 1
+
 let g:ctrlp_map = '<C-o>'
 
 set directory=~/.vim/swapfiles//
 set backupdir=~/.vim/backup//
 
 map <F5> :call CurtineIncSw()<CR>
+nnoremap <F7> :GundoToggle<CR>
+
 
 au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 

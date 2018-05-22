@@ -4,9 +4,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git@github.com:ervandew/supertab.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git@github.com:vim-syntastic/syntastic.git
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
@@ -28,3 +25,12 @@
 [submodule "bundle/vimify"]
 	path = bundle/vimify
 	url = https://github.com/mattpenney89/vimify.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "bundle/Gundo"]
+	path = bundle/Gundo
+	url = https://github.com/vim-scripts/Gundo.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
