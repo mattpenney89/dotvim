@@ -13,6 +13,7 @@ vnoremap gf <C-W>gf
 set et ts=4 sw=4
 set incsearch
 set ignorecase
+set belloff=all
 
 syntax on
 filetype plugin indent on
