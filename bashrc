@@ -121,6 +121,7 @@ alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias cp='cp -a'
 
 alias get='git'
+alias givm='gvim'
 alias gitStashPull='git stash && git pull --ff && git stash pop'
 alias gitFetchMerge='git fetch && git merge'
 
