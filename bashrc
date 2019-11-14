@@ -158,5 +158,5 @@ git config --global alias.last 'log -1 HEAD'
 
 PATH=$PATH:/home/mpenney/.local/bin/:/home/mpenney/bin:/usr/local/sonar-scanner-3.0.1.733-linux/bin 
 
-source acd_func.sh
+source ~/dotvim/acd_func.sh
 eval $(thefuck --alias) 
