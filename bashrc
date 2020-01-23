@@ -125,6 +125,7 @@ alias givm='gvim'
 alias gitStashPull='git stash && git pull --ff && git stash pop'
 alias gitFetchMerge='git fetch && git merge'
 
+alias creds='snapaccess credentials refresh'
 export NINJA_STATUS="[%f/%t] (%r) "
 export EDITOR=vim
 
@@ -160,3 +161,9 @@ PATH=$PATH:/home/mpenney/.local/bin/:/home/mpenney/bin:/usr/local/sonar-scanner-
 
 source ~/dotvim/acd_func.sh
 eval $(thefuck --alias) 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mpenney/google-cloud-sdk/path.bash.inc' ]; then . '/home/mpenney/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mpenney/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mpenney/google-cloud-sdk/completion.bash.inc'; fi
