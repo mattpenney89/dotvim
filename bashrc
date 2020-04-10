@@ -126,6 +126,7 @@ alias gitStashPull='git stash && git pull --ff && git stash pop'
 alias gitFetchMerge='git fetch && git merge'
 
 alias creds='snapaccess credentials refresh'
+alias snapos='adb devices | sed /^$/d | tail +2 | sed s/device// | while read DEVICE; do echo $DEVICE; [ -n "$DEVICE"  ] && adb -s $DEVICE shell -n getprop ro.snap.build.version; done'
 export NINJA_STATUS="[%f/%t] (%r) "
 export EDITOR=vim
 

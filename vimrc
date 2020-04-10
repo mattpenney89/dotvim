@@ -2,6 +2,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 execute pathogen#infect()
 
+colorscheme desert
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

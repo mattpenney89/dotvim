@@ -49,3 +49,9 @@
 [submodule "bundle/vim-illuminate"]
 	path = bundle/vim-illuminate
 	url = git@github.com:RRethy/vim-illuminate.git
+[submodule "bundle/vim-flog"]
+	path = bundle/vim-flog
+	url = https://github.com/rbong/vim-flog.git
+[submodule "colors/awesome-vim-colorschemes"]
+	path = colors/awesome-vim-colorschemes
+	url = https://github.com/rafi/awesome-vim-colorschemes.git
