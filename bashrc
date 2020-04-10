@@ -104,6 +104,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+else
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
 
 # colored GCC warnings and errors
@@ -115,7 +118,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias f='fuck'
 
-alias open='xdg-open'
+if [ `which xdg-open` ]
+then
+    alias open='xdg-open'
+fi
+
 alias hgrep='history | grep'
 alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias cp='cp -a'
