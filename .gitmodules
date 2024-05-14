@@ -13,9 +13,6 @@
 [submodule "bundle/vim-clang-format"]
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -25,9 +22,6 @@
 [submodule "bundle/vimify"]
 	path = bundle/vimify
 	url = https://github.com/mattpenney89/vimify.git
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "bundle/Gundo"]
 	path = bundle/Gundo
 	url = https://github.com/vim-scripts/Gundo.git
@@ -40,9 +34,6 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
-[submodule "bundle/Conque-GDB"]
-	path = bundle/Conque-GDB
-	url = https://github.com/vim-scripts/Conque-GDB.git
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = git@github.com:dhruvasagar/vim-table-mode.git

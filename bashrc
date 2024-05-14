@@ -66,15 +66,15 @@ fi
 #fi
 
 function color_my_prompt {
-    local __user_and_host="\[\033[01;32m\]\u@\h"
-    local __cur_location="\[\033[01;32m\]\w"
-    local __git_branch_color="\[\033[01;34m\]"
+    local __user_and_host="\[\e[01;32m\]\u@\h"
+    local __cur_location="\[\e[01;32m\]\w"
+    local __git_branch_color="\[\e[01;34m\]"
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local __prompt_tail="\[\033[35m\]$"
-    local __last_color="\[\033[00m\]"
+    local __prompt_tail="\[\e[35m\]$"
+    local __last_color="\[\e[00m\]"
 
-    local SMILEY="\[\033[37;1m\]:)"
-    local FROWNY="\[\033[31;1m\]:("
+    local SMILEY="\[\e[37;1m\]:)"
+    local FROWNY="\[\e[31;1m\]:("
     local SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
 
 
@@ -131,12 +131,20 @@ alias get='git'
 alias givm='gvim'
 alias gitStashPull='git stash && git pull --ff && git stash pop'
 alias gitFetchMerge='git fetch && git merge'
+alias gitFetchRebase='git fetch && git rebase'
+alias gitSquash='git add -u && git commit -m "_" && git rebase -i HEAD^^'
 
 alias creds='snapaccess credentials refresh'
 alias snapos='adb devices | sed /^$/d | tail +2 | sed s/device// | while read DEVICE; do echo $DEVICE; [ -n "$DEVICE"  ] && adb -s $DEVICE shell -n getprop ro.snap.build.version; done'
+alias nrf='python3 ~/bin/nrf_shell/nrf_shell.py --uart'
+alias batt='echo "battery_status new" | python ~/bin/nrf_shell/nrf_shell.py --uart'
 export NINJA_STATUS="[%f/%t] (%r) "
 export EDITOR=vim
-
+alias oobe='adb root; adb shell pm disable com.snap.hermosa.services.oobe/.OoBEActivity; adb shell settings put secure com.snap.hermosa.services.oobe.stage 1 ; adb shell settings put secure user_setup_complete 1; adb reboot'
+export ANDROID_SDK_ROOT=$HOME/Snapchat/Dev/sdk/
+export ANDROID_SDK=$HOME/Snapchat/Dev/sdk/
+export PRE_COMMIT_HOME=$HOME/Snapchat/Dev/.pre-commit
+export CMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 #Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -165,19 +173,35 @@ fi
 git config --global alias.last 'log -1 HEAD'
 
 
-PATH=$PATH:/home/mpenney/.local/bin/:/home/mpenney/bin:/usr/local/sonar-scanner-3.0.1.733-linux/bin 
+PATH=$PATH:$HOME/.local/bin/:$HOME/bin:/usr/local/sonar-scanner-3.0.1.733-linux/bin:$HOME/Snapchat/bin
 
 source ~/dotvim/acd_func.sh
 eval $(thefuck --alias) 
 
+##
+# Your previous /Users/mpenney/.bash_profile file was backed up as /Users/matthewpenney/.bash_profile.macports-saved_2020-04-10_at_12:34:05
+##
+
+# MacPorts Installer addition on 2020-04-10_at_12:34:05: adding an appropriate PATH variable for use with MacPorts.
+#export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+export PATH="$PATH:/Users/mpenney/Snapchat/dev/sdk/build-tools/28.0.3/"
+
+bind "set completion-ignore-case on"
+export CLOUDSDK_PYTHON=/usr/bin/python3
+
 # The next line updates PATH for the Google Cloud SDK.
-
-if [ -f '/home/mpenney/google-cloud-sdk/path.bash.inc' ]; then . '/home/mpenney/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/mpenney/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mpenney/google-cloud-sdk/completion.bash.inc'; fi
-
-if [ -f '/Users/matthewpenney/Downloads/gcloud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/matthewpenney/Downloads/gcloud/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/mpenney/Snapchat/Dev/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mpenney/Snapchat/Dev/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/matthewpenney/Downloads/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/matthewpenney/Downloads/gcloud/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/mpenney/Snapchat/Dev/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mpenney/Snapchat/Dev/google-cloud-sdk/completion.bash.inc'; fi
+
+# The next line updates PATH for the NLO
+if [ -f '/Users/mpenney/Snapchat/Dev/_nlo_/detail/scripts/path.shell.inc' ]; then . '/Users/mpenney/Snapchat/Dev/_nlo_/detail/scripts/path.shell.inc'; fi
+
+export SCRCPY_SERVER_PATH=$HOME/Snapchat/Dev/snap-scrcpy-mac-os/scrcpy-server
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
